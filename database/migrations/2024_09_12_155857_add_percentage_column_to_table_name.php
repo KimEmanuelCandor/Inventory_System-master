@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('Notifications', function (Blueprint $table) {
+        Schema::table('notifications', function (Blueprint $table) {
             $table->decimal('percentage', )->nullable(); 
         });
 
@@ -21,7 +21,7 @@ return new class extends Migration
      * Reverse the migrations.
      */
     public function down(): void
-    {Schema::table('Notifications', function (Blueprint $table) {
+    {Schema::table('notifications', function (Blueprint $table) {
         $table->dropColumn('percentage');
     });
     }
