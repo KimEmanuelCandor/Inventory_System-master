@@ -1,0 +1,41 @@
+{
+  "name": "Default",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "remoteEnv": {
+    "SMTP_USERNAME": "${localEnv:SMTP_USERNAME}",
+    "SMTP_PASSWORD": "${localEnv:SMTP_PASSWORD}"
+  },
+  "containerEnv": {
+    "SMTP_USERNAME": "${localEnv:SMTP_USERNAME}",
+    "SMTP_PASSWORD": "${localEnv:SMTP_PASSWORD}"
+  },
+  "forwardPorts": [
+    5173,
+    8001
+  ],
+  "remoteUser": "vscode",
+  "containerUser": "vscode",
+  "postCreateCommand": ".devcontainer/init.sh",
+  "postStartCommand": ".devcontainer/start.sh",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "cweijan.vscode-database-client2",
+        "streetsidesoftware.code-spell-checker",
+        "esbenp.prettier-vscode",
+        "redhat.vscode-xml",
+        "ryuta46.multi-command",
+        "eamodio.gitlens",
+        "foxundermoon.shell-format",
+        "Codeium.codeium",
+        "ryannaddy.laravel-artisan",
+        "amiralizadeh9480.laravel-extra-intellisense",
+        "stef-k.laravel-goto-controller",
+        "codingyu.laravel-goto-view",
+        "mikestead.dotenv"
+      ]
+    }
+  }
+}
